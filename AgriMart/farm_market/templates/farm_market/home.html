@@ -1,0 +1,165 @@
+{% extends "farm_market/index.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block banner-slider %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static "farm_market/images/banner/b1.png" %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static "farm_market/images/banner/b2.png" %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item ">
+        <img src="{% static "farm_market/images/banner/b3.png" %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item ">
+        <img src="{% static "farm_market/images/banner/b4.png" %}" class="d-block w-100" alt="banner image">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+{% endblock banner-slider %}
+{% block information %}
+<div class="container">
+  <div class="row bg-success text-center p-S text-white border-bottom shadow">
+    <h1>Products</h1>
+    <small class="fs-S">
+      Agrimart is your go-to online marketplace for a wide variety of agricultural products, delivering fresh produce directly to your doorstep.
+      We offer a diverse selection, including fresh fruits, vegetables, cereals, and more, all sourced from
+      trusted local farmers. Our commitment is to provide you with high-quality, farm-fresh products, making it easier than ever to access healthy
+      and nutritious food with the convenience of online shopping and home delivery.
+
+    </small>
+  </div>
+</div>
+{% endblock information %}
+
+
+{% block maincontent  %}
+<div class="container">
+<h2 class="text-center">Vegetables</h2>
+<br><br>
+<div class="row container">
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href="{% url 'category' 'CR'%}">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/cabbage.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">Cabbage</p>
+
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href="{% url 'category' 'FRUT'%}">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/tomato.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">Tomatoes</p>
+
+        </div>
+      </a>
+    </div>
+    
+  </div>
+
+</div>
+<div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+style="animation-duration: 1s; animation-delay: 0.6s; 
+animation-name: none;">
+  <div class="goodnesssec buttermilk smbg">
+    <a href=""{% url 'category' 'CR'%}"">
+      <div class="goodnessseccont text-center">
+        <img src="{% static "farm_market/images/product/burger.png"%}" class+"img-responsive" center-block alt="">
+        <p class="m1kpro">Burger</p>
+
+      </div>
+    </a>
+  </div>
+  
+</div>
+
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href=""{% url 'category' 'FRUT'%}"">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/onion.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">Onion</p>
+
+        </div>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href=""{% url 'category' 'CR'%}"">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/milk-shake-chocolate.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">MilkShake</p>
+
+        </div>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href=""{% url 'category' 'CR'%}"">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/cow-milk.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">MilkShake Cow</p>
+
+        </div>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="col-md-4 col-sm-4 mi - go wow fadeInUp" data-wow-duration="1s" data-wow-delays="0.6s"
+  style="animation-duration: 1s; animation-delay: 0.6s; 
+  animation-name: none;">
+    <div class="goodnesssec buttermilk smbg">
+      <a href=""{% url 'category' 'CR'%}"">
+        <div class="goodnessseccont text-center">
+          <img src="{% static "farm_market/images/product/milk-shake-strawberry.png"%}" class+"img-responsive" center-block alt="">
+          <p class="m1kpro">MilkShake Strawberry</p>
+
+        </div>
+      </a>
+    </div>
+    
+  </div>
+
+
+</div>
+</div>
+<br/><br/>
+
+{% endblock maincontent  %}

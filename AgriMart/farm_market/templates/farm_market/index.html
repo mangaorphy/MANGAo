@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{% static 'farm_market/css/owl.carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'farm_market/css/all.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'farm_market/css/style.css' %}"/>
+
+    <title>Agrimart | {% block title %}{% endblock title %}</title>
+
+    <style>
+        @keyframes color-change {
+            0% {
+                color: green;
+            }
+            50% {
+                color: darkred;
+            }
+            100% {
+                color: green;
+            }
+        }
+
+        .animated-word {
+            font-size: 3em;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            animation: color-change 3s infinite;
+            letter-spacing: 2px;
+            text-align: center;  /* Center the animated word */
+            margin-top: 10px;   /* Add some margin for spacing */
+        }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-darkred bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <div class="animated-word"> <i>Agrimart</i> </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url "category" 'CR' %}">Cereals</a></li>
+                  <li><a class="dropdown-item" href="{% url "category" 'LEG' %}">Legumes</a></li>
+                  <li><a class="dropdown-item" href="{% url "category" 'VEG' %}">Vegetables</a></li>
+                  <li><a class="dropdown-item" href="{% url "category" 'FRUT' %}">Fruits</a></li>
+                  
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'about'  %}">About Us</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'contact'  %}">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >MAnga</a>
+                <ul class="dropdown-menu" aria-labelledny="profileDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Orders</a></li>
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item mx - 2">
+                <a href="#" class="nav-link text-white">Cart </a>
+            </li>
+            <li class="nav-item mx - 2">
+                <a href="#" class="nav-link text-white">WishLists</a>
+            </li>
+
+            <li class="nav-item mx - 2">
+                <a href="#" class="nav-link text-white">Login </a>
+            </li>
+
+            <li class="nav-item mx - 2">
+                <a href="{% url "customerregistration" %}" class="nav-link text-white">Registration </a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    
+    {% block banner-slider %}
+    {% endblock banner-slider %}
+    {% block information %}
+    {% endblock information %}
+    {% block maincontent %}
+    {% endblock maincontent %}
+
+    <footer class="container-fluid fixed-bottom bg-success text-center p-2 mt-5">
+        Copyright: 2024, By Orpheus
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script src="{% static 'farm_market/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'farm_market/js/all.min.js' %}"></script>
+    <script src="{% static 'farm_market/js/myscript.js' %}"></script>
+</body>
+</html>

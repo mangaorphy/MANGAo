@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnose Plant</title>
+</head>
+<body>
+    <h1>Upload an Image to Diagnose Your Plant</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Diagnosis Result: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>

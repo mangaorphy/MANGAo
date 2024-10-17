@@ -1,0 +1,38 @@
+{% comment %} {% extends 'farm_market/base.html' %} 
+
+{% load static %}  <!-- Make sure to load static at the top -->
+
+{% block content %}
+<h1>Product List</h1>
+<ul class="product-list">
+    {% for product in products %}
+        <li class="product-item">
+            <div class="product-image">
+                <img src="{% static 'images/' %}{{ product.image }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-details">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p class="product-price">${{ product.price }}</p>
+                <div class="product-rating">
+                    {% for star in "★★★★★" %}
+                        <span class="{% if forloop.counter > product.rating %}empty{% endif %}">{{ star }}</span>
+                    {% endfor %}
+                </div>
+                <button class="add-to-cart" onclick="addToCart({{ product.id }})">Add to Cart</button>
+            </div>
+        </li>
+    {% empty %}
+        <li>No products available.</li>
+    {% endfor %}
+</ul>
+
+<script>
+    function addToCart(productId) {
+        // Implement add to cart functionality
+        alert('Product ' + productId + ' has been added to your cart!');
+    }
+</script>
+
+
+{% endblock %}  {% endcomment %}
