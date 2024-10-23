@@ -1,0 +1,94 @@
+{% extends "farm_market/index.html" %}
+{% block title %}Profile{% endblock title %}
+{% block maincontent %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center bg-primary text-white">
+                    <h3>Your Profile</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Phone Number -->
+                        <div class="form-group mb-3">
+                            <label for="phone_number">Phone Number</label>
+                            {{ form.phone_number }}
+                            {% if form.phone_number.errors %}
+                                <div class="text-danger">
+                                    {{ form.phone_number.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form-group mb-3">
+                            <label for="address">Address</label>
+                            {{ form.address }}
+                            {% if form.address.errors %}
+                                <div class="text-danger">
+                                    {{ form.address.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Zip Code -->
+                        <div class="form-group mb-3">
+                            <label for="zip_code">Zip Code</label>
+                            {{ form.zip_code }}
+                            {% if form.zip_code.errors %}
+                                <div class="text-danger">
+                                    {{ form.zip_code.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Country -->
+                        <div class="form-group mb-3">
+                            <label for="country">Country</label>
+                            {{ form.country }}
+                            {% if form.country.errors %}
+                                <div class="text-danger">
+                                    {{ form.country.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Region -->
+                        <div class="form-group mb-3">
+                            <label for="region">Region</label>
+                            {{ form.region }}
+                            {% if form.region.errors %}
+                                <div class="text-danger">
+                                    {{ form.region.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-success w-100">Update Profile</button>
+                    </form>
+
+                    <!-- Non-field errors -->
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger mt-3">
+                            {% for error in form.non_field_errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <!-- Link to update the profile -->
+                <a href="{% url 'update_profile' %}" class="btn btn-outline-primary mx-2">Update Profile</a>
+                <!-- Link to update the address -->
+                <a href="{% url 'update_address' %}" class="btn btn-outline-primary mx-2">Update Address</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock maincontent %}
